@@ -1,0 +1,35 @@
+<div class="col-md-4 col-xs-12">
+
+  <div class="form-group" >
+    <label>Select Country</label>
+     <select class="form-control" (change)="OnChange($event.target.value)">
+      <option *ngFor="let x of res; let i= index " value="{{i}}">{{  x.CountryName }}</option>
+    </select>
+</div>
+</div>
+<div class="col-md-4 col-xs-12">
+  <div class="form-group">
+    <label>SSelect State</label>
+    <select class="form-control" (change)="OnStateChange($event.target.value)">
+        <option *ngIf="state == '' " value="-1" > Select State </option>
+      <option *ngFor="let s of state; let j = index " value="{{j}}" > {{s.StateName}}</option>
+    </select>
+
+  </div>
+</div>
+<div class="col-md-4 col-xs-12">
+    <div class="form-group">
+      <label>Select City</label>
+      <select class="form-control" >
+          <option *ngIf="city == '' " value="-1" > Select City </option>
+        <option *ngFor="let c of city;"  > {{c}}</option>
+      </select>
+  
+    </div>
+</div>
+
+<!--
+ 
+  <p>{{res |json}}</p>
+ 
+  -->
